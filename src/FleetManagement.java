@@ -85,13 +85,10 @@ public class FleetManagement {
                     }
                     break;
                 case 'A':
-                    fleet.add(myBoat);
+                    addBoat();
                     break;
                 case 'R':
-                    System.out.print("Which boat would you like to remove? : ");
-                    boatName = keyboard.nextLine();
-                    //--write in if else statement later
-                    //--come back to this one
+                    removeBoat();
                     break;
                 case 'E':
                     System.out.println("Which boat do you want to spend on? : ");
@@ -124,6 +121,28 @@ public class FleetManagement {
         double purchasePrice = Double.parseDouble(attributes[5]);
 
         return new Boat (theType,name,manufacturer,makeAndModel,length,purchasePrice);
+    }
+    //-----------------------------------------------------------------------
+    public static void addBoat(){
+
+        type newType;
+        String newName;
+        int newManufacturer;
+        String newMakeAndModel;
+        int newLength;
+
+        System.out.println("Please enter the new boat CSV data : ");
+
+    }
+    //-----------------------------------------------------------------------
+    public static void removeBoat(){
+
+        String boatName;
+
+        System.out.print("Which boat would you like to remove? : ");
+        boatName = keyboard.nextLine();
+        //--write in if else statement later
+        //--come back to this one
     }
 }
 //===========================================================================

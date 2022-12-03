@@ -37,59 +37,61 @@ public class Boat {
 
     //-----------------------------------------------------------------------
     public enum getType() {
-
+        return
     }
     //-----------------------------------------------------------------------
-    public enum setType(){
+    public void setType(){
 
     }
     //-----------------------------------------------------------------------
     public String getName() {
-
+        return name;
     }
     //-----------------------------------------------------------------------
-    public String setName(){
-
+    public void setName(String name){
+        this.name = name;
     }
     //-----------------------------------------------------------------------
     public int getManufacturer() {
-
+        return manufacturer;
     }
 
     //-----------------------------------------------------------------------
-    public int setManufacturer(){
-
+    public void setManufacturer(int manufacturer){
+        this.manufacturer = manufacturer;
     }
 
     //-----------------------------------------------------------------------
     public String getMakeAndModel() {
-
+        return makeAndModel;
     }
     //-----------------------------------------------------------------------
-    public String setMakeAndModel{
-
+    public void setMakeAndModel(String makeAndModel){
+        this.makeAndModel = makeAndModel;
     }
     //-----------------------------------------------------------------------
     public int getLength() {
-
+        return length;
     }
     //-----------------------------------------------------------------------
-    public int setLength(){
-
+    public void setLength(int length){
+        this.length = length;
     }
 
     //-----------------------------------------------------------------------
     public double getPurchasePrice() {
-
+        return purchasePrice;
     }
     //-----------------------------------------------------------------------
-    public double setPurchasePrice(){
+    public void setPurchasePrice(){
+
 
     }
     //-----------------------------------------------------------------------
     public String getExpenses(double newExpense) {
 
-        double subtractFromPurchasePrice = purchasePrice;
+        //--this may cause some sort of problem when run, so double check
+        double subtractFromPurchasePrice = purchasePrice - expenses;
 
         if(newExpense < purchasePrice){
             expenses = newExpense;
