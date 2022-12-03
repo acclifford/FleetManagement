@@ -1,6 +1,8 @@
 public class Boat {
     //-----------------------------------------------------------------------
     public enum type{POWER,SAILING};
+
+    FleetManagement.type theType;
     public String name;
     public int manufacturer;
     public String makeAndModel;
@@ -8,14 +10,23 @@ public class Boat {
     public double purchasePrice;
     public double expenses;
 
-    //-----------------------------------------------------------------------
-    public Boat() {
-        type = null;
+    public Boat(){
+        theType = null;
         name = null;
         manufacturer = 0;
         makeAndModel = null;
         length = 0;
         purchasePrice = 0;
+        expenses = 0;
+    }
+    //-----------------------------------------------------------------------
+    public Boat(FleetManagement.type theType, String name, int manufacturer, String makeAndModel, int length, double purchasePrice) {
+        this.theType = theType;
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.makeAndModel = makeAndModel;
+        this.length = length;
+        this.purchasePrice = purchasePrice;
         expenses = 0;
     }
 
@@ -55,8 +66,9 @@ public class Boat {
     }
 
     //-----------------------------------------------------------------------
-    public double getExpenses() {
+    public double getExpenses(newExpenses) {
 
+        if()
     }
     //-----------------------------------------------------------------------
 }

@@ -10,6 +10,7 @@ public class FleetManagement {
     public static final Scanner keyboard = new Scanner(System.in);
     public static final int MAX_BOAT_LENGTH = 100;
     public static final double MAX_PURCHASE_PRICE = 1000000;
+    enum type{POWER,SAILING};
     //-----------------------------------------------------------------------
     public static void main(String[] args){
 
@@ -65,8 +66,9 @@ public class FleetManagement {
         char menuSelection;
         int index;
         int index2 = 0;
-        Boat myBoat = new Boat();
+
         String boatName;
+        double newExpense;
 
 
         System.out.println("Welcome to the Fleet Management System");
@@ -91,6 +93,12 @@ public class FleetManagement {
                 //--come back to this one
                 break;
             case 'E':
+                System.out.println("Which boat do you want to spend on? : ");
+                boatName = keyboard.nextLine();
+                //--make sure that boat exists and is found in array
+                System.out.println("How much do you want to spend");
+                newExpense = keyboard.nextDouble();
+
 
 
 
@@ -99,13 +107,10 @@ public class FleetManagement {
     }
     //-----------------------------------------------------------------------
     public static Boat createBoat(String[] attributes){
-        enum type{SAILING,POWER}
-        if (attributes[0] == "SAILING"){
-            type myBoat = type.SAILING;
-        }
-        else if(attributes[0] == "POWER"){
-            type myBoat = type.POWER;
-        }
+
+        type theType;
+
+        theType = type.valueOf(attributes[0]);
 
         String name = attributes[1];
 
@@ -117,6 +122,7 @@ public class FleetManagement {
 
         double purchasePrice = Double.parseDouble(attributes[5]);
 
+        return new Boat (theType,name,manufacturer,makeAndModel,length,purchasePrice);
     }
 }
 //===========================================================================
