@@ -39,14 +39,25 @@ public class Boat {
     public enum getType() {
 
     }
+    //-----------------------------------------------------------------------
+    public enum setType(){
 
+    }
     //-----------------------------------------------------------------------
     public String getName() {
 
     }
+    //-----------------------------------------------------------------------
+    public String setName(){
+
+    }
+    //-----------------------------------------------------------------------
+    public int getManufacturer() {
+
+    }
 
     //-----------------------------------------------------------------------
-    public long getManufacturer() {
+    public int setManufacturer(){
 
     }
 
@@ -54,9 +65,16 @@ public class Boat {
     public String getMakeAndModel() {
 
     }
+    //-----------------------------------------------------------------------
+    public String setMakeAndModel{
 
+    }
     //-----------------------------------------------------------------------
     public int getLength() {
+
+    }
+    //-----------------------------------------------------------------------
+    public int setLength(){
 
     }
 
@@ -64,11 +82,24 @@ public class Boat {
     public double getPurchasePrice() {
 
     }
-
     //-----------------------------------------------------------------------
-    public double getExpenses(double newExpense) {
+    public double setPurchasePrice(){
 
-        if()
+    }
+    //-----------------------------------------------------------------------
+    public String getExpenses(double newExpense) {
+
+        double subtractFromPurchasePrice = purchasePrice;
+
+        if(newExpense < purchasePrice){
+            expenses = newExpense;
+            subtractFromPurchasePrice -= expenses;
+            return ("Expense authorized, $" + newExpense + " spend.");
+        }
+        else{
+            return ("Expense not permitted, only $" + subtractFromPurchasePrice + "left to spend.");
+        }
+
     }
     //-----------------------------------------------------------------------
 }
