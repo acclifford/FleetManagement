@@ -77,29 +77,34 @@ public class FleetManagement {
         System.out.print("(P)rint, (A)dd, (R)emove, (E)xpense, e(X)it : ");
         menuSelection = Character.toUpperCase(keyboard.next().charAt(0));
 
-        switch (menuSelection) {
-            case 'P':
-                for(index = 0; index < fleet.size(); index++){
-                    System.out.println(fleet.get(index));
-                }
-                break;
-            case 'A':
-                fleet.add(myBoat);
-                break;
-            case 'R':
-                System.out.print("Which boat would you like to remove? : ");
-                boatName = keyboard.nextLine();
-                //--write in if else statement later
-                //--come back to this one
-                break;
-            case 'E':
-                System.out.println("Which boat do you want to spend on? : ");
-                boatName = keyboard.nextLine();
-                //--make sure that boat exists and is found in array
-                System.out.println("How much do you want to spend");
-                newExpense = keyboard.nextDouble();
-                myBoat.getExpenses(newExpense);
-        }
+        do {
+            switch (menuSelection) {
+                case 'P':
+                    for (index = 0; index < fleet.size(); index++) {
+                        System.out.println(fleet.get(index));
+                    }
+                    break;
+                case 'A':
+                    fleet.add(myBoat);
+                    break;
+                case 'R':
+                    System.out.print("Which boat would you like to remove? : ");
+                    boatName = keyboard.nextLine();
+                    //--write in if else statement later
+                    //--come back to this one
+                    break;
+                case 'E':
+                    System.out.println("Which boat do you want to spend on? : ");
+                    boatName = keyboard.nextLine();
+                    //--make sure that boat exists and is found in array
+                    System.out.println("How much do you want to spend");
+                    newExpense = keyboard.nextDouble();
+                    myBoat.getExpenses(newExpense);
+                    break;
+                case 'X':
+                    System.out.println("Exiting the Fleet Management System");
+            }
+        } while(menuSelection != 'X');
     }
     //-----------------------------------------------------------------------
     public static Boat createBoat(String[] attributes){
