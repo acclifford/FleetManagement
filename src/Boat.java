@@ -66,7 +66,7 @@ public class Boat {
     }
 
     //-----------------------------------------------------------------------
-    public double getExpenses(newExpenses) {
+    public double getExpenses(double newExpense) {
 
         if()
     }

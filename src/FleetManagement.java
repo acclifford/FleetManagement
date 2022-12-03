@@ -11,6 +11,7 @@ public class FleetManagement {
     public static final int MAX_BOAT_LENGTH = 100;
     public static final double MAX_PURCHASE_PRICE = 1000000;
     enum type{POWER,SAILING};
+    ArrayList<Boat> fleet = new ArrayList<>();
     //-----------------------------------------------------------------------
     public static void main(String[] args){
 
@@ -27,13 +28,12 @@ public class FleetManagement {
             initFromObjectFile();
         }
 */
-        menu();
+        menu(ArrayList<Boat>fleet);
 
         writeFleetToObjectFile();
     }
     //-----------------------------------------------------------------------
-    private static ArrayList<Boat> initFromCSVFile(String fileName){
-        ArrayList<Boat> fleet = new ArrayList<>();
+    private static ArrayList<Boat> initFromCSVFile(String fileName,ArrayList<Boat>fleet){
         Path pathToFile = Paths.get(fileName);
 
         try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
@@ -61,12 +61,12 @@ public class FleetManagement {
 
     }
     //-----------------------------------------------------------------------
-    private static void menu() {
+    private static void menu(ArrayList<Boat>fleet) {
 
         char menuSelection;
         int index;
         int index2 = 0;
-
+        Boat myBoat = new Boat();
         String boatName;
         double newExpense;
 
@@ -80,7 +80,7 @@ public class FleetManagement {
         switch (menuSelection) {
             case 'P':
                 for(index = 0; index < fleet.size(); index++){
-                    System.out.println(fleet[index]);
+                    System.out.println(fleet.get(index));
                 }
                 break;
             case 'A':
@@ -98,11 +98,7 @@ public class FleetManagement {
                 //--make sure that boat exists and is found in array
                 System.out.println("How much do you want to spend");
                 newExpense = keyboard.nextDouble();
-
-
-
-
-
+                myBoat.getExpenses(newExpense);
         }
     }
     //-----------------------------------------------------------------------
