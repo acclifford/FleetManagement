@@ -99,12 +99,24 @@ public class FleetManagement {
     }
     //-----------------------------------------------------------------------
     public static Boat createBoat(String[] attributes){
-        enum type = attributes[0];
+        enum type{SAILING,POWER}
+        if (attributes[0] == "SAILING"){
+            type myBoat = type.SAILING;
+        }
+        else if(attributes[0] == "POWER"){
+            type myBoat = type.POWER;
+        }
+
         String name = attributes[1];
+
         int manufacturer = Integer.parseInt(attributes[2]);
+
         String makeAndModel = attributes[3];
+
         int length = Integer.parseInt(attributes[4]);
-        double 
+
+        double purchasePrice = Double.parseDouble(attributes[5]);
+
     }
 }
 //===========================================================================
