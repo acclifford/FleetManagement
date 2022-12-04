@@ -25,9 +25,9 @@ public class FleetManagement {
         fleet = initFromCSVFile("C:\\Users\\Ailis\\Desktop\\CSC120_LAB\\FleetData.csv");
         Boat boat = new Boat();
 */
-
+        ArrayList<Boat> fleet;
         String path = "C:\\Users\\Ailis\\Desktop\\CSC120_LAB\\FleetData.csv";
-        initFromCSVFile(path);
+        fleet =initFromCSVFile(path);
 
 
 
