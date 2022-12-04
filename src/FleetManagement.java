@@ -123,7 +123,7 @@ public class FleetManagement {
         return new Boat (theType,name,manufacturer,makeAndModel,length,purchasePrice);
     }
     //-----------------------------------------------------------------------
-    public static void addBoat(){
+    public static void addBoat(ArrayList<Boat>fleet){
 
         type newType;
         String newName;
@@ -133,16 +133,28 @@ public class FleetManagement {
 
         System.out.println("Please enter the new boat CSV data : ");
 
+
     }
     //-----------------------------------------------------------------------
-    public static void removeBoat(){
+    public static void removeBoat(ArrayList<Boat>fleet){
 
         String boatName;
 
         System.out.print("Which boat would you like to remove? : ");
         boatName = keyboard.nextLine();
-        //--write in if else statement later
-        //--come back to this one
+
+        if(!fleet.contains(boatName)){
+               System.out.println("Cannot find boat " + boatName);
+        }
+        else{
+            int index = 0;
+            do{
+                if (!fleet.getName().equals(boatName)){
+                    index++;
+                }
+            }while (fleet.get(index).getName != boatName);
+            fleet.remove(index);
+        }
     }
 }
 //===========================================================================

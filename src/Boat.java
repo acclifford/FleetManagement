@@ -45,7 +45,7 @@ public class Boat {
     }
     //-----------------------------------------------------------------------
     public String getName() {
-        return name;
+        return this.name;
     }
     //-----------------------------------------------------------------------
     public void setName(String name){
@@ -53,7 +53,7 @@ public class Boat {
     }
     //-----------------------------------------------------------------------
     public int getManufacturer() {
-        return manufacturer;
+        return this.manufacturer;
     }
 
     //-----------------------------------------------------------------------
@@ -63,7 +63,7 @@ public class Boat {
 
     //-----------------------------------------------------------------------
     public String getMakeAndModel() {
-        return makeAndModel;
+        return this.makeAndModel;
     }
     //-----------------------------------------------------------------------
     public void setMakeAndModel(String makeAndModel){
@@ -71,7 +71,7 @@ public class Boat {
     }
     //-----------------------------------------------------------------------
     public int getLength() {
-        return length;
+        return this.length;
     }
     //-----------------------------------------------------------------------
     public void setLength(int length){
