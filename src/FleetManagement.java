@@ -16,6 +16,7 @@ public class FleetManagement {
     public static void main(String[] args){
 
         ArrayList<Boat> fleet = initFromCSVFile("C:\\Users\\Ailis\\Desktop\\CSC120_Lab\\FleetData.csv");
+        Boat boat = new Boat();
 
         for(Boat b : fleet){
             System.out.println(b);
@@ -80,9 +81,11 @@ public class FleetManagement {
         do {
             switch (menuSelection) {
                 case 'P':
+                    System.out.println("Fleet report:");
                     for (index = 0; index < fleet.size(); index++) {
                         System.out.println(fleet.get(index));
                     }
+                    System.out.println("Total                           : ");
                     break;
                 case 'A':
                     addBoat();
@@ -149,12 +152,13 @@ public class FleetManagement {
         else{
             int index = 0;
             do{
-                if (!fleet.getName().equals(boatName)){
+                if (!(fleet.getName().equals(boatName))){
                     index++;
                 }
-            }while (fleet.get(index).getName != boatName);
+            }while (!(fleet.getName().equals(boatName)));
             fleet.remove(index);
         }
     }
+    //-----------------------------------------------------------------------
 }
 //===========================================================================

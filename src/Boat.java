@@ -32,7 +32,9 @@ public class Boat {
 
     //-----------------------------------------------------------------------
     public String toString() {
-
+        return (theType + " " + getName() + "                                 "
+            + getManufacturer() + " " + getMakeAndModel() + "  :  Paid $ "
+            + getPurchasePrice() + "  :  Spent $     " + expenses);
     }
 
     //-----------------------------------------------------------------------
