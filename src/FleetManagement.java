@@ -16,10 +16,14 @@ public class FleetManagement {
     public static final Scanner keyboard = new Scanner(System.in);
     public static final int MAX_BOAT_LENGTH = 100;
     public static final double MAX_PURCHASE_PRICE = 1000000;
-    enum type{POWER,SAILING};
+
+    enum type {POWER, SAILING}
+
+    ;
     ArrayList<Boat> fleet = new ArrayList<>();
+
     //-----------------------------------------------------------------------
-    public static void main(String[] args){
+    public static void main(String[] args) {
 /*
         ArrayList<Boat> fleet;
         fleet = initFromCSVFile("C:\\Users\\Ailis\\Desktop\\CSC120_LAB\\FleetData.csv");
@@ -27,14 +31,10 @@ public class FleetManagement {
 */
         ArrayList<Boat> fleet;
         String path = "C:\\Users\\Ailis\\Desktop\\CSC120_LAB\\FleetData.csv";
-        fleet =initFromCSVFile(path);
+        fleet = initFromCSVFile(path);
 
+        menu(fleet);
 
-
-/*
-        for(Boat b : fleet){
-            System.out.println(b);
-        }
 /*
         if(args.length > 0){
             initFromCSVFile();
@@ -44,27 +44,31 @@ public class FleetManagement {
         }
 */
 
-        menu(fleet);
 
         writeFleetToObjectFile();
 
     }
+
     //-----------------------------------------------------------------------
-    private static ArrayList<Boat> initFromCSVFile(String fileName){
+    private static ArrayList<Boat> initFromCSVFile(String fileName) {
         ArrayList<Boat> fleet = new ArrayList<>();
+
+        Boat newBoat = new Boat();
 
         Path pathToFile = Paths.get(fileName);
 
-        try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
-            String line = br.readLine();
-            while (line != null); {
-                String [] attributes = line.split(",");
-                Boat myBoat = createBoat(attributes);
-                fleet.add(myBoat);
-                line = br.readLine();
+        try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
+            String line = "";
+            while ((line = br.readLine()) != null) ;
+            {
+                String[] attributes = line.split(",");
+                newBoat = createBoat(attributes);
+                fleet.add(newBoat);
+
             }
-        } catch (IOException ioe){
-            ioe.printStackTrace();
+
+        } catch(IOException e) {
+         e.printStackTrace();
         }
 
 
