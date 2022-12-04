@@ -43,16 +43,16 @@ public class FleetManagement {
             initFromObjectFile();
         }
 */
-        /*
+
         menu(fleet);
 
         writeFleetToObjectFile();
-        */
+
     }
     //-----------------------------------------------------------------------
     private static ArrayList<Boat> initFromCSVFile(String fileName){
         ArrayList<Boat> fleet = new ArrayList<>();
-        /*
+
         Path pathToFile = Paths.get(fileName);
 
         try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
@@ -66,12 +66,12 @@ public class FleetManagement {
         } catch (IOException ioe){
             ioe.printStackTrace();
         }
-        */
 
 
+/*
         String line = null;
         try{
-            BufferedReader br = newBufferedReader((Path) new FileReader(fileName));
+            BufferedReader br = newBufferedReader(new FileReader(fileName));
 
             while((line = br.readLine()) != null){
             String[] values = line.split(",");
@@ -84,11 +84,13 @@ public class FleetManagement {
                 e.printStackTrace();
             }
 
-
+*/
 
         return fleet;
 
         }
+
+
 
     //-----------------------------------------------------------------------
     private static void initFromObjectFile(){
