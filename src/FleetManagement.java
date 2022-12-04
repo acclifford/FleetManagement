@@ -35,14 +35,13 @@ public class FleetManagement {
 
         menu(fleet);
 
-/*
         if(args.length > 0){
-            initFromCSVFile();
+            initFromCSVFile(path);
         }
         else{
             initFromObjectFile();
         }
-*/
+
 
 
         writeFleetToObjectFile();
@@ -56,7 +55,7 @@ public class FleetManagement {
         Boat newBoat = new Boat();
 
         Path pathToFile = Paths.get(fileName);
-
+/*
         try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
             String line = "";
             while ((line = br.readLine()) != null) ;
@@ -70,16 +69,17 @@ public class FleetManagement {
         } catch(IOException e) {
          e.printStackTrace();
         }
+*/
 
 
-/*
         String line = null;
         try{
             BufferedReader br = newBufferedReader(new FileReader(fileName));
 
             while((line = br.readLine()) != null){
-            String[] values = line.split(",");
-            System.out.println(line);
+            String[] attributes = line.split(",");
+                newBoat = createBoat(attributes);
+                fleet.add(newBoat);
             }
 
             } catch (FileNotFoundException e){
@@ -88,7 +88,7 @@ public class FleetManagement {
                 e.printStackTrace();
             }
 
-*/
+
 
         return fleet;
 
