@@ -15,8 +15,10 @@ public class FleetManagement {
     //-----------------------------------------------------------------------
     public static void main(String[] args){
 
-        ArrayList<Boat> fleet = initFromCSVFile("C:\\Users\\Ailis\\Desktop\\CSC120_Lab\\FleetData.csv");
+        ArrayList<Boat> fleet;
+        fleet = initFromCSVFile("C:\\Users\\Ailis\\Desktop\\CSC120_Lab\\FleetData.csv");
         Boat boat = new Boat();
+
 
         for(Boat b : fleet){
             System.out.println(b);
@@ -29,12 +31,13 @@ public class FleetManagement {
             initFromObjectFile();
         }
 */
-        menu(ArrayList<Boat>fleet);
+        menu(fleet);
 
         writeFleetToObjectFile();
     }
     //-----------------------------------------------------------------------
-    private static ArrayList<Boat> initFromCSVFile(String fileName,ArrayList<Boat>fleet){
+    private static ArrayList<Boat> initFromCSVFile(String fileName){
+        ArrayList<Boat> fleet = new ArrayList<>();
         Path pathToFile = Paths.get(fileName);
 
         try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
@@ -88,10 +91,10 @@ public class FleetManagement {
                     System.out.println("Total                           : ");
                     break;
                 case 'A':
-                    addBoat();
+                    addBoat(fleet);
                     break;
                 case 'R':
-                    removeBoat();
+                    removeBoat(fleet);
                     break;
                 case 'E':
                     System.out.println("Which boat do you want to spend on? : ");
