@@ -152,10 +152,10 @@ public class FleetManagement {
         else{
             int index = 0;
             do{
-                if (!(fleet.getName().equals(boatName))){
+                if (!(fleet.get(index).getName().equals(boatName))){
                     index++;
                 }
-            }while (!(fleet.getName().equals(boatName)));
+            }while (!(fleet.get(index).getName().equals(boatName)));
             fleet.remove(index);
         }
     }
