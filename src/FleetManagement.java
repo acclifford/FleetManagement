@@ -4,6 +4,12 @@ import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import static java.nio.file.Files.newBufferedReader;
+
 //===========================================================================
 public class FleetManagement {
     //-----------------------------------------------------------------------
@@ -14,12 +20,17 @@ public class FleetManagement {
     ArrayList<Boat> fleet = new ArrayList<>();
     //-----------------------------------------------------------------------
     public static void main(String[] args){
-
+/*
         ArrayList<Boat> fleet;
         fleet = initFromCSVFile("C:\\Users\\Ailis\\Desktop\\CSC120_LAB\\FleetData.csv");
         Boat boat = new Boat();
+*/
+
+        String path = "C:\\Users\\Ailis\\Desktop\\CSC120_LAB\\FleetData.csv";
+        initFromCSVFile(path);
 
 
+/*
         for(Boat b : fleet){
             System.out.println(b);
         }
@@ -31,13 +42,16 @@ public class FleetManagement {
             initFromObjectFile();
         }
 */
+        /*
         menu(fleet);
 
         writeFleetToObjectFile();
+        */
     }
     //-----------------------------------------------------------------------
     private static ArrayList<Boat> initFromCSVFile(String fileName){
         ArrayList<Boat> fleet = new ArrayList<>();
+        /*
         Path pathToFile = Paths.get(fileName);
 
         try(BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
@@ -51,6 +65,25 @@ public class FleetManagement {
         } catch (IOException ioe){
             ioe.printStackTrace();
         }
+        */
+
+
+        String line = null;
+        try{
+            BufferedReader br = newBufferedReader((Path) new FileReader(fileName));
+
+            while((line = br.readLine()) != null){
+            String[] values = line.split(",");
+            System.out.println(line);
+            }
+
+            } catch (FileNotFoundException e){
+                e.printStackTrace();
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+
+
 
         return fleet;
 
