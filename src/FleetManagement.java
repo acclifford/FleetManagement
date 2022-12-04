@@ -16,7 +16,7 @@ public class FleetManagement {
     public static void main(String[] args){
 
         ArrayList<Boat> fleet;
-        fleet = initFromCSVFile("C:\\Users\\Ailis\\Desktop\\CSC120_Lab\\FleetData.csv");
+        fleet = initFromCSVFile("C:\\Users\\Ailis\\Desktop\\CSC120_LAB\\FleetData.csv");
         Boat boat = new Boat();
 
 
@@ -84,7 +84,7 @@ public class FleetManagement {
         do {
             switch (menuSelection) {
                 case 'P':
-                    System.out.println("/n");
+                    System.out.println(" ");
                     System.out.println("Fleet report:");
                     for (index = 0; index < fleet.size(); index++) {
                         System.out.println(fleet.get(index));
@@ -92,15 +92,15 @@ public class FleetManagement {
                     System.out.println("Total                           : ");
                     break;
                 case 'A':
-                    System.out.println("/n");
+                    System.out.println(" ");
                     addBoat(fleet);
                     break;
                 case 'R':
-                    System.out.println("/n");
+                    System.out.println(" ");
                     removeBoat(fleet);
                     break;
                 case 'E':
-                    System.out.println("/n");
+                    System.out.println(" ");
                     System.out.println("Which boat do you want to spend on? : ");
                     boatName = keyboard.nextLine();
                     //--make sure that boat exists and is found in array
@@ -109,7 +109,7 @@ public class FleetManagement {
                     myBoat.getExpenses(newExpense);
                     break;
                 case 'X':
-                    System.out.println("/n");
+                    System.out.println(" ");
                     System.out.println("Exiting the Fleet Management System");
             }
         } while(menuSelection != 'X');
