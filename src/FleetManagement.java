@@ -84,6 +84,7 @@ public class FleetManagement {
         do {
             switch (menuSelection) {
                 case 'P':
+                    System.out.println("/n");
                     System.out.println("Fleet report:");
                     for (index = 0; index < fleet.size(); index++) {
                         System.out.println(fleet.get(index));
@@ -91,12 +92,15 @@ public class FleetManagement {
                     System.out.println("Total                           : ");
                     break;
                 case 'A':
+                    System.out.println("/n");
                     addBoat(fleet);
                     break;
                 case 'R':
+                    System.out.println("/n");
                     removeBoat(fleet);
                     break;
                 case 'E':
+                    System.out.println("/n");
                     System.out.println("Which boat do you want to spend on? : ");
                     boatName = keyboard.nextLine();
                     //--make sure that boat exists and is found in array
@@ -105,6 +109,7 @@ public class FleetManagement {
                     myBoat.getExpenses(newExpense);
                     break;
                 case 'X':
+                    System.out.println("/n");
                     System.out.println("Exiting the Fleet Management System");
             }
         } while(menuSelection != 'X');
