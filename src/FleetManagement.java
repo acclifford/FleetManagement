@@ -112,31 +112,36 @@ public class FleetManagement {
         type theType;
 
         theType = type.valueOf(attributes[0]);
-
         String name = attributes[1];
-
         int manufacturer = Integer.parseInt(attributes[2]);
-
         String makeAndModel = attributes[3];
-
         int length = Integer.parseInt(attributes[4]);
-
         double purchasePrice = Double.parseDouble(attributes[5]);
 
         return new Boat (theType,name,manufacturer,makeAndModel,length,purchasePrice);
     }
     //-----------------------------------------------------------------------
-    public static void addBoat(ArrayList<Boat>fleet){
+    public static Boat addBoat(ArrayList<Boat>fleet){
 
         type newType;
         String newName;
         int newManufacturer;
         String newMakeAndModel;
         int newLength;
+        double newPurchasePrice;
 
         System.out.println("Please enter the new boat CSV data : ");
+        String str = keyboard.nextLine();
+        String[] res = str.split("[,]");
 
+        newType = type.valueOf(res[0]);
+        newName = res[1];
+        newManufacturer = Integer.parseInt(res[2]);
+        newMakeAndModel = res[3];
+        newLength = Integer.parseInt(res[4]);
+        newPurchasePrice = Double.parseDouble(res[5]);
 
+        return new Boat (newType,newName,newManufacturer,newMakeAndModel,newLength,newPurchasePrice);
     }
     //-----------------------------------------------------------------------
     public static void removeBoat(ArrayList<Boat>fleet){
